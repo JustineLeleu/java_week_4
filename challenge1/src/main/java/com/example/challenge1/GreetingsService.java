@@ -13,7 +13,7 @@ public class GreetingsService
     @Autowired
     Environment environment;
 
-    private final String request;
+    private String request;
 
     GreetingsService(@Value("${configured_language}") String language)
     {
@@ -23,5 +23,10 @@ public class GreetingsService
     public String getMessage()
     {
         return environment.getProperty(this.request);
+    }
+
+    public void setRequest(String language)
+    {
+        this.request = language + "_hello_world";
     }
 }
