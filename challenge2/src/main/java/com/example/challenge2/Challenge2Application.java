@@ -16,7 +16,9 @@ public class Challenge2Application {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(CountingSingleton.class);
         CountingSingleton counting = context.getBean(CountingSingleton.class);
-        //System.out.println(counting.countWords(new String[]{"Hello this is a sentence sentence.", "This is another sentence.", "And another sentence."}));
+
+//        ApplicationContext context = new AnnotationConfigApplicationContext(CountingPrototype.class);
+//        CountingPrototype counting = context.getBean(CountingPrototype.class);
 
         List<Map<String, Integer>> list = counting.countWords(sentences);
         for (int i = 0 ; i < list.size(); i++)
@@ -24,8 +26,6 @@ public class Challenge2Application {
             System.out.println(sentences[i] + ": ");
             System.out.println(list.get(i));
         }
-
-        //Here is a sentence Sentence. Here is another! And another one sentence: Sentence ?
     }
 
     public static String[] readLine()
