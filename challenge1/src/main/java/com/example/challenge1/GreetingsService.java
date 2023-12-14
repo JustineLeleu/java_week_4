@@ -10,14 +10,14 @@ import org.springframework.beans.factory.annotation.Value;
 @PropertySource("classpath:application.properties")
 public class GreetingsService
 {
-    @Autowired
     Environment environment;
 
     private String request;
 
-    GreetingsService(@Value("${configured_language}") String language)
+    GreetingsService(@Value("${configured_language}") String language, Environment environment)
     {
         this.request = language + "_hello_world";
+        this.environment = environment;
     }
 
     public String getMessage()
