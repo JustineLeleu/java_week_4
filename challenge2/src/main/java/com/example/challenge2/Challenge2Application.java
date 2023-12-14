@@ -31,8 +31,6 @@ public class Challenge2Application {
     public static String[] readLine()
     {
         Scanner scanner = new Scanner(System.in);
-        String[] test = scanner.nextLine().split("[.?!]");
-        scanner.close();
-        return test;
+        return scanner.nextLine().split("[.?!]");
     }
 }
